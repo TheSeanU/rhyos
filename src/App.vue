@@ -1,8 +1,19 @@
 
 <template>
-  <RouterView />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <RouterView />
+      </div>
+    </div>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router';
+</script>
 
-<style scoped></style>
+
+<style>
+@import "./resources/styles.css";
+</style>
