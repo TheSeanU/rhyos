@@ -1,6 +1,6 @@
 
 <template>
-  <h1>Removed router</h1>
+  <RouterView />
 </template>
 
 <script setup lang="ts"></script>
