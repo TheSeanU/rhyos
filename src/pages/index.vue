@@ -6,45 +6,20 @@
             <div class="header">
                 <div class="logo"></div>
                 <label class="night-mode" for="night" @click="enableNight">
-                    <i class="fa fa-moon-o"></i>
+                    <svgRenderer name="sunrise" width="20" color="#ef5350" hover="#000000" id="1" />
                 </label>
             </div>
             <section class="left-section">
                 <img class="profile-pic" src="" />
                 <div class="profile-detail">
                     <span class="profile-maps">
-                        <svgRenderer name="location" color="#000" />
+                        <svgRenderer name="facebook" width="15" hover="#007cf8" id="2" />
                         Groningn NL
                     </span>
                     <p class="profile-name">Sean Unett</p>
                     <span class="profile-summary"></span>
                 </div>
-                <div class="profile-pils">
-                    <span class="pils">
-                        <a href="https://twitter.com/simoberny" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                            Twitter
-                        </a>
-                    </span>
-                    <span class="pils">
-                        <a href="https://codepen.io/simoberny/" target="_blank">
-                            <i class="fa fa-codepen"></i>
-                            Codepen
-                        </a>
-                    </span>
-                    <span class="pils">
-                        <a href="https://dribbble.com/simoberny" target="_blank">
-                            <i class="fa fa-dribbble"></i>
-                            Dribble
-                        </a>
-                    </span>
-                    <span class="pils">
-                        <a href="https://www.linkedin.com/in/simone-bernab%C3%A8-6623a4114/" target="_blank">
-                            <i class="fa fa-linkedin"></i>
-                            Linkedin
-                        </a>
-                    </span>
-                </div>
+                <Pills />
             </section>
             <div class="front-smooth"></div>
         </div>
@@ -53,6 +28,7 @@
 
 <script setup lang="ts">
 import svgRenderer from '../resources/svgRenderer.vue';
+import Pills from '../components/Pills.vue';
 
 import { ref } from 'vue';
 
@@ -170,6 +146,7 @@ body {
         .night-mode {
             position: absolute;
             right: 0px;
+            padding: 10px;
             text-align: center;
             margin: 10px;
             width: 45px;
@@ -242,72 +219,6 @@ body {
                 margin-top: 20px;
                 color: var(--text-cv);
                 font-weight: 700;
-            }
-        }
-    }
-}
-
-.fa-map-marker {
-    padding-right: 10px;
-}
-
-.fa-arrow-down {
-    padding-left: 10px;
-}
-
-.profile-pils {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-
-    .pils {
-        background: var(--pils-back);
-        box-shadow: inset 0 0 0 1px var(--border), 0 10px 30px -10px rgba(0, 0, 0, 0.12);
-        border-radius: 60px;
-        transition: all 0.3s;
-        font-size: 13px;
-        cursor: pointer;
-        margin: 5px;
-        color: var(--text-primary);
-
-        a,
-        a:visited,
-        a:link {
-            display: block;
-            text-decoration: none;
-            color: var(--main-2-fore);
-            padding: 5px 10px;
-
-            i {
-                padding-right: 2px;
-            }
-        }
-
-        &:nth-child(1):hover {
-            box-shadow: inset 0 0 0 1px #007cf8, 0 10px 35px -10px rgba(20, 122, 255, 0.5);
-
-            i {
-                color: #007cf8;
-            }
-        }
-
-        &:nth-child(2):hover {
-            box-shadow: inset 0 0 0 1px #fff, 0 10px 30px -10px rgba(100, 100, 100, 0.6);
-        }
-
-        &:nth-child(3):hover {
-            box-shadow: inset 0 0 0 1px #f154ff, 0 10px 35px -10px rgba(255, 59, 245, 0.5);
-
-            i {
-                color: #f154ff;
-            }
-        }
-
-        &:nth-child(4):hover {
-            box-shadow: inset 0 0 0 1px #163ca3, 0 10px 30px -10px rgba(13, 60, 121, 0.5);
-
-            i {
-                color: #163ca3;
             }
         }
     }
