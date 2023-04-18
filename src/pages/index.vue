@@ -6,15 +6,16 @@
             <div class="header">
                 <div class="logo"></div>
                 <label class="night-mode" for="night" @click="enableNight">
-                    <svgRenderer name="sunrise" width="20" color="#ef5350" hover="#000000" id="1" />
+                    <svgRenderer name="sunrise" width="20" hover="#00ff00" />
                 </label>
             </div>
             <section class="left-section">
                 <img class="profile-pic" src="" />
                 <div class="profile-detail">
                     <span class="profile-maps">
-                        <svgRenderer name="facebook" width="15" hover="#007cf8" id="2" />
-                        Groningn NL
+                        <svgRenderer name="facebook" width="15" hover="#007cf8">
+                            Groningn NL
+                        </svgRenderer>
                     </span>
                     <p class="profile-name">Sean Unett</p>
                     <span class="profile-summary"></span>
@@ -78,7 +79,7 @@ const enableNight = (): void => {
     --text-secondary: #6b8cae;
     --text-third: #777;
 
-    --text-cv: #ef5350;
+    --text-cv: #ff0000;
 }
 
 input[type="checkbox"] {

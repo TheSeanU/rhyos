@@ -3,8 +3,9 @@
         <template v-for="items in socials" :key="items.name">
             <span class="pils">
                 <a :href="items.link" target="_blank">
-                    <SvgRenderer :name="items.icon" width="15" :hover="items.color" />
-                    {{ items.name }}
+                    <SvgRenderer :name="items.icon" width="15" :hover="items.color">
+                        {{ items.name }}
+                    </SvgRenderer>
                 </a>
             </span>
         </template>
