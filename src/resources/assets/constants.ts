@@ -1,14 +1,19 @@
+import { UuId } from "./helpers"
+
+export const colorUuid = `${UuId.value}-color`
+export const hoverUuid = `${UuId.value}-hover`
+
 export const socials = [
     {
         name: 'Facebook',
         link: 'https://facebook.com',
-        icon: 'facebook',
+        icon: 'twitter',
         color: '0000FF'
     },
     {
         name: 'Facebook',
         link: 'https://facebook.com',
-        icon: 'facebook',
+        icon: 'github',
         color: '00FF00'
     },
     {
@@ -31,3 +36,5 @@ export const socials = [
         color: 'FFA500'
     },
 ]
+
+
