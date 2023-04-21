@@ -5,7 +5,9 @@ const { BASE_URL } = import.meta.env;
 
 const router = createRouter({
   history: createWebHistory(BASE_URL),
-  routes: [{ path: '/', component: Index }]
+  routes: [
+    { path: '/', component: Index },
+  ]
 })
 
 export default router

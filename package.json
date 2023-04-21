@@ -12,12 +12,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "safe-compare": "^1.1.4",
     "sass": "^1.62.0",
+    "static-auth": "^2.1.2",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.15.13",
+    "@types/safe-compare": "^1.1.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.2",
