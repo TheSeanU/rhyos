@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Index from '../pages/index.vue'
+import Index from 'pages/index.vue'
 
 const { BASE_URL } = import.meta.env;
 
