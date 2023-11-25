@@ -3,8 +3,8 @@
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client"],
-    "moduleResolution": "node",
+
+    "moduleResolution": "Node",
     "skipLibCheck": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -18,18 +18,18 @@
     "allowJs": false,
     "noEmit": true,
     "checkJs": false,
+
     "jsx": "preserve",
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,
     "baseUrl": ".",
     "paths": {
-      "pages/*": ["./src/pages/*"],
-      "resources/*": ["./src/resources/*"],
-      "router/*": ["./src/router/*"],
+      "*": ["./src/*"]
     },
   },
-  "include": ["src/**/*", "vite.config.ts"],
+  "include": ["src"],
+  "exclude": ["node_modules"],
   "ts-node": {
     "transpileOnly": true,
     "compilerOptions": {
