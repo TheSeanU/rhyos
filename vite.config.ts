@@ -1,32 +1,18 @@
+import { fileURLToPath, URL } from 'node:url'
+
 import { defineConfig } from 'vite'
-
-import path from 'path'
 import vue from '@vitejs/plugin-vue'
-import WindiCSS from 'vite-plugin-windicss'
+import VueDevTools from 'vite-plugin-vue-devtools'
 
-const srcPath = path.resolve('./src/')
-
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    WindiCSS({
-      scan: {
-          dirs: ['./src'],
-          fileExtensions: ['vue', 'js', 'ts', 'scss'],
-      },
-    }),
-    vue({
-        include: [/\.vue$/, /\.md$/],
-    }),
+    vue(),
+    VueDevTools(),
   ],
   resolve: {
     alias: {
-      pages: path.join(srcPath, 'pages'),
-      resouces: path.join(srcPath, 'resouces'),
-      router: path.join(srcPath, 'router')
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  build: {  
-    emptyOutDir: true,
-    outDir: 'dist',
   }
 })

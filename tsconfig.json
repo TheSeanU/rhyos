@@ -1,39 +1,11 @@
 {
-  "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client"],
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "allowJs": false,
-    "noEmit": true,
-    "checkJs": false,
-    "jsx": "preserve",
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "useUnknownInCatchVariables": true,
-    "baseUrl": ".",
-    "paths": {
-      "pages/*": ["./src/pages/*"],
-      "resources/*": ["./src/resources/*"],
-      "router/*": ["./src/router/*"],
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
     },
-  },
-  "include": ["src/**/*", "vite.config.ts"],
-  "ts-node": {
-    "transpileOnly": true,
-    "compilerOptions": {
-        "module": "CommonJS"
+    {
+      "path": "./tsconfig.app.json"
     }
-  }
+  ]
 }
