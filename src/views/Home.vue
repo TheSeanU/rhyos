@@ -7,7 +7,7 @@
                     This is a simple cookie dock that allows you to manage your cookies.
                     You can add, remove, and view cookies in your browser.
                 </p>
-                <button class="btn btn-primary" @click="window.openCookiedock()">Reopen the cookie</button>
+                <button class="btn btn-primary" @click="openCookiedock()">Reopen the cookie</button>
             </div>
         </div>
     </div>
@@ -22,7 +22,9 @@ declare global {
     }
 }
 
-onMounted(window.openCookiedock);
+const { openCookiedock } = window;
+
+onMounted(openCookiedock);
 </script>
 
 
