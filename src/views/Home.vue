@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang='ts'>
-import { onMounted } from 'vue';
+// import { onMounted } from 'vue';
 
 declare global {
     interface Window {
@@ -24,7 +24,7 @@ declare global {
 
 const { openCookiedock } = window;
 
-onMounted(openCookiedock);
+// onMounted(openCookiedock);
 </script>
 
 
