@@ -7,22 +7,16 @@
                     This is a simple cookie dock that allows you to manage your cookies.
                     You can add, remove, and view cookies in your browser.
                 </p>
-                <button class="btn btn-primary" @click="openCookiedock()">Reopen the cookie</button>
+                <button class="btn btn-primary" @click="open()">Reopen the cookie</button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang='ts'>
-// import { onMounted } from 'vue';
 
-declare global {
-    interface Window {
-        openCookiedock: () => void;
-    }
-}
 
-const { openCookiedock } = window;
+const { open } = window.cookiedock;
 
 // onMounted(openCookiedock);
 </script>
