@@ -15,7 +15,7 @@
 
 <script setup lang='ts'>
 
-
+// @ts-expect-error
 const { open } = window.cookiedock;
 
 // onMounted(openCookiedock);
