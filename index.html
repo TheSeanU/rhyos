@@ -5,8 +5,95 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+      console.log(window.cookiedock);
+    </script>
+
+    <script type="module">
+      window.addEventListener("load", function () {
+        console.log("loaded -0");
+      });
+      window.document.addEventListener("load", function () {
+        console.log("loaded -0");
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("loaded -0");
+      });
+    </script>
+
+
   <script id="cookiedock" src="https://dev.consent.cookiedock.com" data-cuuid="9ebca177-17d6-4703-9a00-1d0168ac45a4"></script>
   <title>Rhyos</title>
+
+      <script async data-cookieconsent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-EZJDG02RJ3"></script>
+
+    <script type="text/javascript" data-cookieconsent="analytics">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-EZJDG02RJ3");
+    </script>
+
+    <script data-cookieconsent="analytics">
+      console.log(window.cookiedock);
+
+      console.log("loaded 0");
+
+      window.addEventListener("load", function () {
+        console.log("loaded 0");
+      });
+
+      window.document.addEventListener("load", function () {
+        console.log("loaded 0");
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("loaded 0");
+      });
+    </script>
+
+    <script type="text/javascript" data-cookieconsent="functional">
+      console.log("loaded 4");
+
+      window.addEventListener("load", function () {
+        console.log("loaded 4");
+      });
+
+      window.document.addEventListener("load", function () {
+        console.log("loaded 4");
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("loaded 4");
+      });
+    </script>
+
+    <script type="text/javascript" data-cookieconsent="analytics">
+      console.log("loaded 1");
+
+      window.addEventListener("load", function () {
+        console.log("loaded 1");
+      });
+    </script>
+    <script type="text/javascript" data-cookieconsent="marketing">
+      console.log("loaded 2");
+
+      window.document.addEventListener("load", function () {
+        console.log("loaded 2");
+      });
+    </script>
+    <script type="text/javascript" data-cookieconsent="statistics">
+      console.log("loaded 3");
+
+      window.addEventListener("load", function () {
+        console.log("loaded 3");
+      });
+    </script>
+
 </head>
 
 <body>
