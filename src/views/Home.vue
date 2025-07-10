@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// @ts-nocheck
+
 const { open, close, acceptAll, declineAll, savePreferences, showDetails, hideDetails, togglePreference, toggleCookie, setLanguage } = window.cookiedock;
 
 console.log(window.cookiedock);
