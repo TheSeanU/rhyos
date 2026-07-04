@@ -74,7 +74,6 @@ onUnmounted(() => {
 
 <style scoped>
 .home-page {
-  /* Omit background animation for mobile improvements */
   --x: calc(var(--posX, 0) * 1px);
   --y: calc(var(--posY, 0) * 1px);
 
@@ -91,8 +90,30 @@ onUnmounted(() => {
   padding-inline: max(1.5rem, env(safe-area-inset-left)) max(1.5rem, env(safe-area-inset-right));
   min-height: 100vh;
   min-height: 100dvh;
-  /* No background animation for mobile focus */
-  background: rgb(30, 36, 45); /* Subtle fallback background */
+  background-image:
+    linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)),
+    radial-gradient(
+      90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
+      rgb(200 200 200),
+      rgb(22 0 45)
+    ),
+    radial-gradient(
+      100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
+      rgb(250 255 0),
+      rgb(36 0 0)
+    ),
+    radial-gradient(
+      150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
+      rgb(20 175 125),
+      rgb(0 10 255)
+    ),
+    radial-gradient(
+      100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
+      rgb(255 77 0),
+      rgb(0 200 255)
+    ),
+    linear-gradient(60deg, rgb(255 0 0), rgb(120 86 255));
+  background-blend-mode: overlay, overlay, difference, difference, difference, normal;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -115,7 +136,6 @@ onUnmounted(() => {
   box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.2);
   color: rgb(255 255 255);
   font-family: system-ui, sans-serif;
-  transition: width 0.3s, padding 0.3s;
 }
 
 .greeting-card__logo {
@@ -212,77 +232,20 @@ onUnmounted(() => {
   transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
+@media (max-width: 480px) {
+  .greeting-card {
+    padding: 1.5rem;
+    margin: auto 1.5rem;
+  }
+
+  .greeting-card__logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
 .greeting-card__social-link:hover {
   background: rgb(255 255 255 / 0.16);
-}
-
-/* Improved mobile styling (ignore background animation) */
-@media (max-width: 600px) {
-  .home-page {
-    align-items: flex-start;
-    padding-block: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-bottom));
-    padding-inline: max(0.5rem, env(safe-area-inset-left)) max(0.5rem, env(safe-area-inset-right));
-  }
-
-  .greeting-card {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 0.16);
-  }
-
-  .greeting-card__logo {
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .greeting-card__title {
-    font-size: 1.5rem;
-  }
-
-  .greeting-card__role {
-    font-size: 1.1rem;
-  }
-
-  .greeting-card__intro {
-    font-size: 0.95rem;
-  }
-
-  .greeting-card__section-title {
-    font-size: 0.69rem;
-  }
-
-  .greeting-card__social-list {
-    gap: 0.5rem;
-  }
-
-  .greeting-card__social-link {
-    font-size: 0.78rem;
-    padding: 0.5rem 0.8rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .greeting-card {
-    padding: 0.75rem;
-    border-radius: 0.7rem;
-  }
-  .greeting-card__title {
-    font-size: 1.1rem;
-  }
-  .greeting-card__role {
-    font-size: 0.98rem;
-  }
-  .greeting-card__logo {
-    width: 2.2rem;
-    height: 2.2rem;
-  }
-  .greeting-card__intro {
-    font-size: 0.87rem;
-  }
 }
 </style>
