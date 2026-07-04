@@ -1,10 +1,12 @@
 <script setup lang="ts">
-// @ts-nocheck
 
-const { open, close, acceptAll, declineAll, savePreferences, showDetails, hideDetails, togglePreference, toggleCookie, setLanguage } = window.cookiedock;
+let cookiedock: any;
 
-console.log(window.cookiedock);
-console.log(window);
+if('cookiedock' in window) {
+    cookiedock = window.cookiedock;
+
+    console.log(cookiedock);
+}
 </script>
 
 <template>
@@ -15,20 +17,20 @@ console.log(window);
             <h2 class="section-title">Basic Banner Controls</h2>
             <div class="cards-grid">
                 <div class="card basic-card">
-                    <button @click="open()">Open</button>
+                    <button @click="cookiedock.open()">Open</button>
                     <p class="explanation">Resets consent choices and reopens the cookie consent banner to allow users
                         to make new
                         choices</p>
                 </div>
 
                 <div class="card basic-card">
-                    <button @click="close()">Close</button>
+                    <button @click="cookiedock.close()">Close</button>
                     <p class="explanation">Closes the cookie consent banner without saving any changes to consent
                         preferences</p>
                 </div>
 
                 <div class="card basic-card">
-                    <button @click="acceptAll()">Accept all</button>
+                    <button @click="cookiedock.acceptAll()">Accept all</button>
                     <p class="explanation">Accepts all cookie categories (necessary, analytics, advertising) and closes
                         the banner
                     </p>
@@ -37,7 +39,7 @@ console.log(window);
                 </div>
 
                 <div class="card basic-card">
-                    <button @click="declineAll()">Decline all</button>
+                    <button @click="cookiedock.declineAll()">Decline all</button>
                     <p class="explanation">Declines all optional cookie categories, only keeping necessary cookies, and
                         closes the
                         banner</p>
@@ -46,7 +48,7 @@ console.log(window);
                 </div>
 
                 <div class="card basic-card">
-                    <button @click="savePreferences()">Save preferences</button>
+                    <button @click="cookiedock.savePreferences()">Save preferences</button>
                     <p class="explanation">Saves the current cookie preference selections and closes the banner</p>
 
                     <span>in development</span>
@@ -58,14 +60,14 @@ console.log(window);
             <h2 class="section-title">Detail Controls</h2>
             <div class="cards-grid">
                 <div class="card detail-card">
-                    <button @click="showDetails()">Show details</button>
+                    <button @click="cookiedock.showDetails()">Show details</button>
                     <p class="explanation">Opens the detailed cookie preferences dialog with more information about each
                         cookie
                         category</p>
                 </div>
 
                 <div class="card detail-card">
-                    <button @click="hideDetails()">Hide details</button>
+                    <button @click="cookiedock.hideDetails()">Hide details</button>
                     <p class="explanation">Closes the detailed cookie preferences dialog without saving changes</p>
                 </div>
             </div>
