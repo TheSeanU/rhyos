@@ -1,5 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+
+import Home from '../views/Home.vue';
+import Cookiedock from '../views/Cookiedock.vue';
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +9,12 @@ export const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
-  ]
-})
+    {
+      path: '/cookiedock',
+      name: 'cookiedock',
+      component: Cookiedock,
+    },
+  ],
+});
