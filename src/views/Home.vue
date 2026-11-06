@@ -1,44 +1,44 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, useTemplateRef } from 'vue'
+import { onMounted, onUnmounted, useTemplateRef } from 'vue';
 
 interface SocialLink {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
-const pageRef = useTemplateRef<HTMLElement>('pageRef')
+const pageRef = useTemplateRef<HTMLElement>('pageRef');
 
 const contact = {
   name: 'Sean',
   role: 'Developer',
   information: 'I build things for the web. This is my little corner of the internet.',
-}
+};
 
 const socialLinks: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/theSeanU' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sean-unett-701014384/' },
-]
+];
 
 function handlePointerMove(event: PointerEvent): void {
-  const element = pageRef.value
+  const element = pageRef.value;
   if (!element) {
-    return
+    return;
   }
 
-  const { clientX, clientY } = event
-  const { top, left, width, height } = element.getBoundingClientRect()
+  const { clientX, clientY } = event;
+  const { top, left, width, height } = element.getBoundingClientRect();
 
-  element.style.setProperty('--posX', String(clientX - left - width / 2))
-  element.style.setProperty('--posY', String(clientY - top - height / 2))
+  element.style.setProperty('--posX', String(clientX - left - width / 2));
+  element.style.setProperty('--posY', String(clientY - top - height / 2));
 }
 
 onMounted(() => {
-  pageRef.value?.addEventListener('pointermove', handlePointerMove)
-})
+  pageRef.value?.addEventListener('pointermove', handlePointerMove);
+});
 
 onUnmounted(() => {
-  pageRef.value?.removeEventListener('pointermove', handlePointerMove)
-})
+  pageRef.value?.removeEventListener('pointermove', handlePointerMove);
+});
 </script>
 
 <template>
@@ -57,12 +57,7 @@ onUnmounted(() => {
         <h2 id="social-heading" class="greeting-card__section-title">Find me online</h2>
         <ul class="greeting-card__social-list">
           <li v-for="link in socialLinks" :key="link.label">
-            <a
-              class="greeting-card__social-link"
-              :href="link.href"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="greeting-card__social-link" :href="link.href" target="_blank" rel="noopener noreferrer">
               {{ link.label }}
             </a>
           </li>
@@ -91,28 +86,10 @@ onUnmounted(() => {
   min-height: 100vh;
   min-height: 100dvh;
   background-image:
-    linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)),
-    radial-gradient(
-      90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
-      rgb(200 200 200),
-      rgb(22 0 45)
-    ),
-    radial-gradient(
-      100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
-      rgb(250 255 0),
-      rgb(36 0 0)
-    ),
-    radial-gradient(
-      150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
-      rgb(20 175 125),
-      rgb(0 10 255)
-    ),
-    radial-gradient(
-      100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
-      rgb(255 77 0),
-      rgb(0 200 255)
-    ),
-    linear-gradient(60deg, rgb(255 0 0), rgb(120 86 255));
+    linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), rgb(200 200 200), rgb(22 0 45)),
+    radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)), rgb(250 255 0), rgb(36 0 0)),
+    radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)), rgb(20 175 125), rgb(0 10 255)),
+    radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 77 0), rgb(0 200 255)), linear-gradient(60deg, rgb(255 0 0), rgb(120 86 255));
   background-blend-mode: overlay, overlay, difference, difference, difference, normal;
 }
 
@@ -229,7 +206,9 @@ onUnmounted(() => {
   font-weight: 500;
   text-decoration: none;
   touch-action: manipulation;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 @media (max-width: 480px) {

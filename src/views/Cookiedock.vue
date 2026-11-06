@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-function injectExternalScript(
-  src: string,
-  attributes: Record<string, string> = {},
-): HTMLScriptElement {
+function injectExternalScript(src: string, attributes: Record<string, string> = {}): HTMLScriptElement {
   const existing = document.querySelector<HTMLScriptElement>(`script[src="${src}"]`);
   if (existing) {
     return existing;
@@ -21,10 +18,7 @@ function injectExternalScript(
   return script;
 }
 
-function injectInlineScript(
-  code: string,
-  attributes: Record<string, string> = {},
-): HTMLScriptElement {
+function injectInlineScript(code: string, attributes: Record<string, string> = {}): HTMLScriptElement {
   const script = document.createElement('script');
   script.textContent = code;
 
@@ -162,43 +156,31 @@ function hideDetails(): void {
       <div class="cards-grid">
         <div class="card basic-card">
           <button @click="open">Open</button>
-          <p class="explanation">
-            Resets consent choices and reopens the cookie consent banner to allow users to make new
-            choices
-          </p>
+          <p class="explanation">Resets consent choices and reopens the cookie consent banner to allow users to make new choices</p>
         </div>
 
         <div class="card basic-card">
           <button @click="close">Close</button>
-          <p class="explanation">
-            Closes the cookie consent banner without saving any changes to consent preferences
-          </p>
+          <p class="explanation">Closes the cookie consent banner without saving any changes to consent preferences</p>
         </div>
 
         <div class="card basic-card">
           <button @click="acceptAll">Accept all</button>
-          <p class="explanation">
-            Accepts all cookie categories (necessary, analytics, advertising) and closes the banner
-          </p>
+          <p class="explanation">Accepts all cookie categories (necessary, analytics, advertising) and closes the banner</p>
 
           <span>in development</span>
         </div>
 
         <div class="card basic-card">
           <button @click="declineAll">Decline all</button>
-          <p class="explanation">
-            Declines all optional cookie categories, only keeping necessary cookies, and closes the
-            banner
-          </p>
+          <p class="explanation">Declines all optional cookie categories, only keeping necessary cookies, and closes the banner</p>
 
           <span>in development</span>
         </div>
 
         <div class="card basic-card">
           <button @click="savePreferences">Save preferences</button>
-          <p class="explanation">
-            Saves the current cookie preference selections and closes the banner
-          </p>
+          <p class="explanation">Saves the current cookie preference selections and closes the banner</p>
 
           <span>in development</span>
         </div>
@@ -210,17 +192,12 @@ function hideDetails(): void {
       <div class="cards-grid">
         <div class="card detail-card">
           <button @click="showDetails">Show details</button>
-          <p class="explanation">
-            Opens the detailed cookie preferences dialog with more information about each cookie
-            category
-          </p>
+          <p class="explanation">Opens the detailed cookie preferences dialog with more information about each cookie category</p>
         </div>
 
         <div class="card detail-card">
           <button @click="hideDetails">Hide details</button>
-          <p class="explanation">
-            Closes the detailed cookie preferences dialog without saving changes
-          </p>
+          <p class="explanation">Closes the detailed cookie preferences dialog without saving changes</p>
         </div>
       </div>
     </section>
@@ -233,9 +210,7 @@ function hideDetails(): void {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
